@@ -71,7 +71,7 @@ class SearchOrchestrator(private val webViewScraper: WebViewScraper) {
         currentDepth: Int,
         maxDepth: Int,
         options: ScraperOptions,
-        visited: MutableSetOf<String>,
+        visited: MutableSet<String>,
         onLog: (String) -> Unit
     ): Flow<ScrapedItem> = flow {
         if (currentDepth > maxDepth || visited.contains(url)) return@flow
